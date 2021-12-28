@@ -1,44 +1,35 @@
-**English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+大R杂货 迷你4G无线路由 双频WiFi支持5G 随身便携 OpenWrt系统
+MagicBox AC750 双频路由 QCA9531+9887
+配置：16M 闪存 / 128M内存
 
-# Actions-OpenWrt
+## 硬件相关：
+高通 QCA9531 550Mhz CPU + 9887 5G Wi-Fi 芯片，
+16M闪存 / 128M内存
+433Mbps + 300Mbps 双频 Wi-Fi
+USB 扩展口（ LTE 版两个 / Wi-Fi 版一个）
+两个百兆网口（默认 1WAN 1LAN）
+TF 卡槽（Wi-Fi 版无）
+LTE 版采用 Type-C 供电 / Wi-Fi 版采用 Micro USB 供电。
 
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+4G LTE 版采用黑色尼龙材质3D打印外壳
+Wi-Fi 版继续采用亚克力外壳
 
-A template for building OpenWrt with GitHub Actions
+## 固件相关
 
-## Usage
+此固件基于原版openwrt 19.07，以纯净稳定为特色。
+考虑到9531的性能和闪存大小，只加入少量应用，没有加入任何爬墙功能（放不下也没意义）。
+默认集成LTE所需的kmod-usb-net、kmod-usb-net-rndis、usb-modeswitch驱动，默认添加WWAN网卡和防火墙，默认开启WIFI，开箱即用，无需手动配置。
+如果需要定制，可以自行fork修改，都有详细备注。
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- Push `.config` file to the GitHub repository.
-- Select `Build OpenWrt` on the Actions page.
-- Click the `Run workflow` button.
-- When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+## Openwrt配置相关
 
-## Tips
+默认管理页面: 192.168.8.1
+默认密码: password
+默认SSID：Road-MagicBox
+LTE/4G 接口自动设置
 
-- It may take a long time to create a `.config` file and build the OpenWrt firmware. Thus, before create repository to build your own firmware, you may check out if others have already built it which meet your needs by simply [search `Actions-Openwrt` in GitHub](https://github.com/search?q=Actions-openwrt).
-- Add some meta info of your built firmware (such as firmware architecture and installed packages) to your repository introduction, this will save others' time.
+自动编译脚本源自[P3TERX](https://github.com/P3TERX)/[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+脚本使用说明：
+[English](https://github.com/P3TERX/Actions-OpenWrt) | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-## Credits
 
-- [Microsoft Azure](https://azure.microsoft.com)
-- [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
-- [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
-- [tmate](https://github.com/tmate-io/tmate)
-- [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
-- [csexton/debugger-action](https://github.com/csexton/debugger-action)
-- [Cowtransfer](https://cowtransfer.com)
-- [WeTransfer](https://wetransfer.com/)
-- [Mikubill/transfer](https://github.com/Mikubill/transfer)
-- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
-- [ActionsRML/delete-workflow-runs](https://github.com/ActionsRML/delete-workflow-runs)
-- [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases)
-- [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
-
-## License
-
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
