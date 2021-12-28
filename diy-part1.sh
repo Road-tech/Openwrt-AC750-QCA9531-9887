@@ -21,5 +21,9 @@ popd
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-sed -i '2d' feeds.conf.default
+
+echo 'src-git packages https://git.openwrt.org/feed/packages.git;openwrt-19.07' >feeds.conf.default
 echo 'src-git luci https://github.com/Lienol/luci.git;19.07' >>feeds.conf.default
+echo 'src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07' >>feeds.conf.default
+echo 'src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-19.07' >>feeds.conf.default
+echo 'src-git freifunk https://github.com/freifunk/openwrt-packages.git;openwrt-19.07' >>feeds.conf.default
